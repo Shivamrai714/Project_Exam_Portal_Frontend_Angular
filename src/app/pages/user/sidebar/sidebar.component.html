@@ -1,0 +1,28 @@
+<mat-card class="mt10">
+    <mat-action-list>
+
+        <div mat-subheader><h1>Categories</h1></div>
+
+        <!-- Various listings -->
+ 
+
+         <!-- Button to show all quizes -->
+         <button mat-list-item routerLink="/user-dashboard/0" >
+            <mat-icon class="mr10" mat-list-icon>home> </mat-icon> All Quizes
+         </button>
+
+        <!-- Just run the loop to fetch the categories from the backend  -->
+
+        <button 
+        *ngFor="let c of categories"   
+        [routerLink]="'/user-dashboard/'+c.cid"
+        mat-list-item 
+        >
+        <mat-icon class="mr10" mat-list-icon>quiz> </mat-icon> {{c.title}}
+        </button>
+
+    </mat-action-list>
+
+</mat-card>
+
+<!-- {{categories|json}} -->

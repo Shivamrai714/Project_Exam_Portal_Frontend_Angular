@@ -1,0 +1,82 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row"  >
+            <div class="col-md-12">
+
+                <mat-card class="mt20">
+
+                    <mat-card-header>
+                        <!-- heading -->
+                        <mat-card-title>
+                            <h2> Read the Instruction Carefully </h2>
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            Just a step away to test youself.
+                        </mat-card-subtitle>
+                    </mat-card-header>
+
+
+
+
+                    <mat-card-content class="ml20">
+
+                        <h1><b> {{quiz.title}} </b> </h1>
+                        <p>{{quiz.description}}</p>
+
+                        <mat-divider></mat-divider>
+                        <br>
+                        <h2>Important Instructions</h2>
+
+                        <ul>
+
+                            <li>Read the Instructions Carefully. </li>
+                            <li>This Quiz is only for Practive purpose. </li>
+                            <li>Pattern will be of MCQ Type </li>
+                            <li>Total Weightage : <b> {{quiz.maxMarks}} Marks </b> </li>
+                            <!-- Time of Quiz is 1 min  -->
+                            <li>The Quiz will be auto-Submitted in <b> {{quiz.numberOfQuestions*1}} Minutes </b> </li>
+                            <li>There are <b>{{quiz.numberOfQuestions}} Questions </b> in this quiz.</li>
+                            <li>Each question is of
+                                <b>{{quiz.maxMarks / quiz.numberOfQuestions }}</b> Mark .
+                            </li>
+                            <li>You can attempt this Quiz , any no of Times. </li>
+
+
+
+                        </ul>
+
+                        <mat-divider></mat-divider>
+
+                        <br>
+                        <h2>Attempting Guidelines</h2>
+                        <ol>
+                            <li> Click<b> Start Button </b> below , to begin the test. </li>
+                            <li> The timmer will start as soon as you click the Start Button . </li>
+                            <li> Once Interrupted/Submitted , test can't be resumed Again</li>
+                            <li> Scroll down to see the next Question in Queue </li>
+                            <li> Report of test will be generated at the End of Test . </li>
+                        </ol>
+                    </mat-card-content>
+
+                    <mat-card-actions class="text-center">
+                        <button  (click)="startQuiz()" mat-raised-button color="primary">Start Quiz</button>
+                    </mat-card-actions>
+
+
+
+
+
+                </mat-card>
+
+
+
+
+
+            </div>
+
+
+        </div>
+      
+    
+    </div>
+</div>

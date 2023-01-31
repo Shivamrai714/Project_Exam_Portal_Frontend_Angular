@@ -1,0 +1,74 @@
+
+<!-- To check that null values are not present in phone field we use ngIf="user.phone" -->
+
+<mat-card   *ngIf="user">
+    <h1>Welcome to Profile</h1>
+ <!-- To see details are fetch from .ts file codes  {{user |json}}  
+Dont use this with other user.username etc -->
+
+<!-- {{user|json}} -->
+
+<mat-card-content>
+
+<div class="bootstrap-wrapper">
+ <div class="container">
+    <div class="container text-center">
+
+    <img src="https://st.depositphotos.com/2101611/3925/v/600/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg" alt="Img " 
+    class="profile-image">
+   
+    <h1 class="mt20">{{user.firstname}} {{user.lastname}}</h1>
+
+</div>
+
+
+    <div class="row">
+    <div class="col-md-8 offset-md-2">
+
+<!-- Table to show details -->
+
+        <table class="table text-center">
+          <tr>
+            <td>Username</td>
+          <td>{{user.username}}</td>
+          </tr> 
+          <tr>
+            <td>User Id </td>
+            <td>EXAM_{{user.id}}</td>
+          </tr>
+          <tr>
+            <td *ngIf="user.phone"> Phone No </td>
+            <td>{{user.phone}}</td>
+          </tr>
+          <tr>
+            <td>Role</td>
+            <td>{{user.authorities[0].authority}}</td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td>{{user.enabled?"ACTIVEA":"NOT-ACTIVE"}}</td>
+          </tr>
+
+
+        </table>
+   
+
+    </div>
+</div>
+ </div>
+
+</div>
+
+
+
+</mat-card-content>
+
+<div class="text-center">
+<mat-card-actions>
+    <button mat-raised-button color="primary">UPDATE</button>
+    <button mat-raised-button color="accent">SHARE</button>
+</mat-card-actions>
+</div>
+
+
+</mat-card>

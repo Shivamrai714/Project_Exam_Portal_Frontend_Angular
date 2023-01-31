@@ -1,0 +1,69 @@
+<!-- <h1>Navbar componenet</h1> -->
+
+<mat-toolbar color="warn" >
+    <a 
+    routerLink="/"
+    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu_book</mat-icon>
+    </a>
+    <span>Exam Portal </span>
+    
+    <span class="example-spacer ml20 mr20"></span>
+   <!-- Login button :  also condition reder to show Logout button -->   
+    <a 
+    *ngIf="!isLoggedIn"
+
+    routerLink="/login"
+    mat-icon-button 
+    class="example-icon favorite-icon ml20 mr20" 
+    aria-label="Example icon-button with heart icon"
+    >
+      Login  
+   </a>
+   <!-- Register button otherwise href="/signup" -->
+   <a 
+   *ngIf="!isLoggedIn"
+[routerLink]="'/signup'"
+   mat-icon-button 
+   class="example-icon favorite-icon mr20" 
+   aria-label="Example icon-button with heart icon"
+   >
+     Register  
+  </a>
+
+
+
+
+
+
+   <!-- Logout button when already logged in -->
+
+   <a 
+ 
+   *ngIf="isLoggedIn"
+   (click)="logout()"
+   mat-icon-button 
+   class="example-icon favorite-icon ml50 mr20" 
+   aria-label="Example icon-button with heart icon"
+   >
+     Logout 
+  </a>
+
+
+  <button 
+ 
+  *ngIf="isLoggedIn &&  user"
+
+  mat-button 
+  class="example-icon favorite-icon ml20 mr20" 
+  aria-label="Example icon-button with heart icon"
+   
+  >
+ {{login.getUser().username}} 
+ </button>
+
+ <!-- Removed the router link from the username , as in user it was creating problem -->
+
+
+
+  </mat-toolbar>

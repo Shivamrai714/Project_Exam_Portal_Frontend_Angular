@@ -1,0 +1,71 @@
+<!-- <h1>This is the LOGIN PAGE</h1> -->
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row " style="margin-top:20px">
+            <div class="col-md-6 offset-md-3">
+
+                <!-- Starting card  -->
+                <mat-card>
+                    <!-- <mat-card-title>Mat Card Working</mat-card-title> -->
+                <div class="container text-center">
+                    <img src="../../../assets/logo2.png" alt="No image">
+                </div>
+
+
+          
+                <h1 class="text-center"> Login </h1>
+
+                <!-- <h1>{{user | json}}</h1>   Used to it check the data binding. -->
+
+              <!-- {{  loginData | json}}    Only for checking binding in object -->
+
+                <form  (ngSubmit)="formSubmit()" >
+
+                    <!-- Username field -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input 
+                        [(ngModel)]="loginData.username"
+                        name="username" matInput
+                            placeholder="Enter username here">
+                        <mat-hint>Valid Username</mat-hint>
+                    </mat-form-field>
+
+
+                    <!-- Password field -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input
+                        [(ngModel)]="loginData.password"
+                         type="password" name="password" matInput placeholder="Enter your Password">
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button
+                         mat-raised-button 
+                         color="primary"
+                          type="submit">Login</button>
+                        <button 
+                        class="ml20" 
+                        mat-raised-button
+                         color="accent" 
+                         type="reset">Rest</button>
+
+                    </div>
+                
+
+
+                </form>
+                
+            </mat-card>
+
+            </div>
+       
+        </div>
+
+
+    </div>
+
+
+</div>
